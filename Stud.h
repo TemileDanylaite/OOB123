@@ -8,11 +8,11 @@ struct Stud {
 	double egz;
 	double GalutinisVid;
 	double GalutinisMed;
-	
+
 };
 
 void ived(Stud& Lok);
-void output(Stud Lok);
+void output(const Stud& Lok, bool useMedian);
 void val(Stud& Lok);
 
 #endif //STUD_H_INCLUDED

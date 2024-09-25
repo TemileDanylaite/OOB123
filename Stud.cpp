@@ -21,13 +21,16 @@ void ived(Stud& Lok) {
 }
 
 
-
-	void output(const Stud Lok)
+	void output(const Stud& Lok, bool useMedian)
 {
+		cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde;
+		if (useMedian) {
+			cout <<setw(4) << right<< fixed << setprecision(2) << Lok.GalutinisMed << endl;
+		}
+		else {
+			cout<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid << endl;
 
-	cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
-		<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid
-	    <<setw(18) <<right<<fixed<<setprecision(2) << Lok.GalutinisMed << endl;
+		}
 
 }
 
