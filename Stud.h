@@ -7,6 +7,7 @@ struct Stud {
 	std::vector<int> ND;
 	double egz;
 	double GalutinisVid;
+	double GalutinisMed;
 	
 };
 

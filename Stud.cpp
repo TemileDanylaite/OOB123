@@ -27,7 +27,7 @@ void ived(Stud& Lok) {
 
 	cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
 		<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid
-	    << endl;
+	    <<setw(18) <<right<<fixed<<setprecision(2) << Lok.GalutinisMed << endl;
 
 }
 
