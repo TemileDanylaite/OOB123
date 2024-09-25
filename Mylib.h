@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <random>
 
 
 
@@ -20,7 +21,9 @@ using std::setprecision;
 using std::fixed;
 using std::string;
 using std::vector;
-
+using std::random_device;
+using std::mt19937;
+using std::uniform_int_distribution;
 
 #endif // MYLIB_H_INCLUDED
 
