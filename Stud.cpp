@@ -6,14 +6,31 @@ void ived(Stud& Lok) {
 	cout << "Ivesti varda ir pavarde: ";
 	cin >> Lok.vardas >> Lok.pavarde;
 
-	int ndCount;
-	cout << "Ivesti namu darbu skaiciu: ";
-	cin >> ndCount;
-	Lok.ND.resize(ndCount);
+	string pasirinkimas;
+	cout << "Ar zinai, koks yra namu darbu skaicius?(taip/ne): ";
+	cin >> pasirinkimas;
 
-	cout << "Ivesti namu darbu rezultatus(10-baleje sistemoje): ";
-	for (int i = 0; i < ndCount; ++i) {
-		cin >> Lok.ND[i];
+	if (pasirinkimas == "taip") {
+		int ndCount;
+		cout << "Ivesti namu darbu skaiciu: ";
+		cin >> ndCount;
+		Lok.ND.resize(ndCount);
+
+		cout << "Ivesti namu darbu rezultatus(10-baleje sistemoje): ";
+		for (int i = 0; i < ndCount; ++i) {
+			cin >> Lok.ND[i];
+		}
+	}
+	else if (pasirinkimas == "ne") {
+		double nd;
+		cout << "Ivesti namu darbu rezultatus(ivesti '-1',kad baigti):" << endl;
+		while (true) {
+			cin >> nd;
+			if (nd == -1) {
+				break;
+			}
+			Lok.ND.push_back(nd);
+		}
 	}
 
 	cout << "Ivesti egzamino rezultata: ";
