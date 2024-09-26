@@ -65,7 +65,11 @@ int main()
 			val(Temp);
 		}
 		
-	}
+}
+
+	sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+		return a.vardas < b.vardas;
+		});
 
 cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
 	<< setw(5) << right << "Galutinis(Vid.)"
