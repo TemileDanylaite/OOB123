@@ -66,7 +66,6 @@ void ived(Stud& Lok) {
 	}
 
 
-
 	void output(const Stud & Lok)
 {
 		cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
