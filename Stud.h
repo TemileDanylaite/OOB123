@@ -13,7 +13,7 @@ struct Stud {
 
 
 void ived(Stud& Lok);
-void output(const Stud& Lok, bool useMedian);
+void output(const Stud& Lok);
 void val(Stud& Lok);
 
 void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);
