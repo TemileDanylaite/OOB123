@@ -14,7 +14,7 @@ double apskaiciuotiMediana(std::vector<int>& nd) {
 }
 
 
-void apskaiciuotiGalutinius(Stud& Lok, bool useMedian) {
+void apskaiciuotiGalutinius(Stud& Lok) {
 	if (Lok.ND.empty()) {
 		cout << "Nd yra tuscias, negalima suskaiciuoti galutinio balo" << endl;
 		Lok.GalutinisVid = 0.0;
@@ -26,17 +26,10 @@ void apskaiciuotiGalutinius(Stud& Lok, bool useMedian) {
 		vidutinis += nd;
 	}
 	vidutinis /= Lok.ND.size();
+    Lok.GalutinisVid = 0.4 * vidutinis + 0.6 * Lok.egz;
 
-
-	if (useMedian) {
-		double mediana = apskaiciuotiMediana(Lok.ND);
-		Lok.GalutinisMed = 0.4 * mediana + 0.6 * Lok.egz;
-		Lok.GalutinisVid = 0.0;
-	}
-	else {
-		Lok.GalutinisVid = 0.4 * vidutinis + 0.6 * Lok.egz;
-		Lok.GalutinisMed = 0.0;
-	}
+	double mediana = apskaiciuotiMediana(Lok.ND);
+	Lok.GalutinisMed = 0.4 * mediana + 0.6 * Lok.egz;
 
 }
 
@@ -49,18 +42,13 @@ int main()
 	string pasirinkimas;
 	cin >> pasirinkimas;
 
-	bool useMedian = false;
 	
 	if (pasirinkimas == "nuskaityti") {
 		nuskaitytiIsFailo(Vec1,"kursiokai.txt");
 
-		cout <<"Pasirinkti galutinio balo skaiciavimo buda(0 - vidurkis, 1 - mediana) : ";
-		int choice;
-		cin >> choice;
-		useMedian = (choice == 1);
 
 		for (auto& studentas : Vec1) {
-			apskaiciuotiGalutinius(studentas, useMedian);
+			apskaiciuotiGalutinius(studentas);
 		}
 	}
 	else {
@@ -68,32 +56,25 @@ int main()
 		int n;
 		cin >> n;
 
-		cout << "Pasirinkti galutinio balo skaiciavimo buda(0- vidurkis, 1 - mediana): ";
-		int choice;
-		cin >> choice;
-		useMedian = (choice == 1);
-
 		for (int i = 0; i < n; i++) {
 			cout << "Please input user data: " << endl;
 			ived(Temp);
 
-			apskaiciuotiGalutinius(Temp, useMedian);
+			apskaiciuotiGalutinius(Temp);
 			Vec1.push_back(Temp);
 			val(Temp);
 		}
 		
 	}
 
-	if (useMedian) {
-		cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
-			 << setw(5) << right << "Galutinis(Med.)" << endl;
-	}
-	else {
-		cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" 
-			<< setw(5) << right << " Galutinis(Vid.)" << endl;
-	}
+cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
+	<< setw(5) << right << "Galutinis(Vid.)"
+	<< setw(5) << right << " Galutinis(Med.)" << endl;
+
+cout << string(60, '-') << endl;
+
 	for (const auto& studentas : Vec1) {
-		output(studentas, useMedian);
+		output(studentas);
 	}
 
 	system("pause");
