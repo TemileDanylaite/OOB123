@@ -12,7 +12,6 @@ void ived(Stud& Lok) {
 	cin >> pasirinkimas;
 
 	if (pasirinkimas == "taip") {
-
 		random_device rd;
 		mt19937 gen(rd());
 		uniform_int_distribution<> dist(1, 10);
@@ -20,7 +19,6 @@ void ived(Stud& Lok) {
 		int ndCount;
 		cout << "Ivesti namu darbu skaiciu: ";
 		cin >> ndCount;
-		Lok.ND.resize(ndCount);
 
 		Lok.ND.resize(ndCount);
 		for (int i = 0; i < ndCount; ++i) {
@@ -40,9 +38,11 @@ void ived(Stud& Lok) {
 			cin >> ndCount;
 			Lok.ND.resize(ndCount);
 
+
 			cout << "Ivesti namu darbu rezultatus(10-baleje sistemoje): ";
 			for (int i = 0; i < ndCount; ++i) {
 				cin >> Lok.ND[i];
+			
 			}
 		}
 		else if (pasirinkimas == "ne") {
@@ -57,13 +57,17 @@ void ived(Stud& Lok) {
 			}
 		}
 
+
 		cout << "Ivesti egzamino rezultata: ";
 		cin >> Lok.egz;
+		
+		}
+
 	}
-}
 
 
-	void output(const Stud& Lok, bool useMedian)
+
+	void output(const Stud & Lok, bool useMedian)
 {
 		cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde;
 		if (useMedian) {
