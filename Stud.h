@@ -17,4 +17,4 @@ void val(Stud& Lok);
 
 void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);
 
-#endif //STUD_H
+#endif //STUD_H_INCLUDED
