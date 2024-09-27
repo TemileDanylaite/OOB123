@@ -6,7 +6,6 @@ void ived(Stud& Lok) {
 	cout << "Ivesti varda ir pavarde: ";
 	cin >> Lok.vardas >> Lok.pavarde;
 
-
 	string pasirinkimas;
 	cout << "Ar reikia namu darbu ir egzamino rezultatus generuoti atsitiktinai?(taip/ne) ";
 	cin >> pasirinkimas;

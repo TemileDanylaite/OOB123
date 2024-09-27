@@ -11,7 +11,6 @@ struct Stud {
 
 };
 
-
 void ived(Stud& Lok);
 void output(const Stud& Lok);
 void val(Stud& Lok);
