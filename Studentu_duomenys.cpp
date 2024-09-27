@@ -30,7 +30,6 @@ void apskaiciuotiGalutinius(Stud& Lok) {
 
 	double mediana = apskaiciuotiMediana(Lok.ND);
 	Lok.GalutinisMed = 0.4 * mediana + 0.6 * Lok.egz;
-
 }
 
 int main()
