@@ -5,26 +5,30 @@ void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas) 
 	try {
 		std::ifstream inFile(failoVardas);
 		if (!inFile) {
-			throw runtime_error("Nepavylo atdiaryti failo:" + failoVardas);
+			throw runtime_error("Nepavyko atdiaryti failo:" + failoVardas);
 		}
-		string header;
-		getline(inFile, header);
+		string line;
+		while(getline(inFile, line)) {
 
-		Stud temp;
-		while (inFile >> temp.vardas >> temp.pavarde) {
+			std::stringstream ss(line);
+			Stud temp;
 			temp.ND.clear();
 
-			for (int i = 0; i < 5; ++i) {
-				int nd;
-				if (!(inFile >> nd)) {
-					throw runtime_error("Nepavykko nuskaityti ND balo:" + temp.vardas + " " + temp.pavarde);
-				}
+			if (!(ss >> temp.vardas >> temp.pavarde)) {
+				std::cerr << "Nepavyko nuskaityti studento vardo ir pavardes" << endl;
+				continue;
+			}
+			int nd;
+			while (ss >> nd) {
 				temp.ND.push_back(nd);
 			}
-
-			if (!(inFile >> temp.egz)) {
-				throw runtime_error("Nepavykko nuskaityti egzamino balo:" + temp.vardas + " " + temp.pavarde);
+			if (temp.ND.size() < 1) {
+				continue;
 			}
+			temp.egz = temp.ND.back();
+			temp.ND.pop_back();
+
+
 			Vec1.push_back(temp);
 		}
 		inFile.close();
