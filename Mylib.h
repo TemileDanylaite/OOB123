@@ -8,7 +8,10 @@
 #include <algorithm>
 #include <random>
 #include <fstream>
+<<<<<<< HEAD
 #include <sstream>
+=======
+>>>>>>> origin/v0.1
 
 
 
