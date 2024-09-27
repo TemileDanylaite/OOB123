@@ -1,0 +1,15 @@
+# Ignoruokite Visual Studio konfigūraciją
+.vs/
+*.suo
+*.user
+*.userprefs
+*.sln.ide
+*.sln.docstates
+
+# Ignoruokite bin ir obj aplankus
+bin/
+obj/
+
+# Ignoruokite kitus temp failus
+*.tmp
+*.log
