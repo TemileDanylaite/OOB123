@@ -34,6 +34,19 @@ void apskaiciuotiGalutinius(Stud& Lok) {
 
 int main()
 {
+	cout << "Ar norite sugeneruoti studentu failus?(taip/ne): ";
+	string generuotiFailoPasirinkima;
+	cin >> generuotiFailoPasirinkima;
+
+	if (generuotiFailoPasirinkima == "taip") {
+		sugeneruotiStudentoFaila("studentai1000.txt", 1000, 5);
+		sugeneruotiStudentoFaila("studentai10000.txt", 10000, 7);
+		sugeneruotiStudentoFaila("studentai100000.txt", 100000, 6);
+		sugeneruotiStudentoFaila("studentai1000000.txt", 1000000, 8);
+		sugeneruotiStudentoFaila("studentai10000000.txt", 10000000, 4);
+		cout << "Failai sugeneruoti!" << endl;
+	}
+
 	vector<Stud> Vec1;
 	Stud Temp;
 
@@ -43,7 +56,7 @@ int main()
 
 	
 	if (pasirinkimas == "nuskaityti") {
-		nuskaitytiIsFailo(Vec1,"kursiokai.txt");
+		nuskaitytiIsFailo(Vec1,"studentai1000000.txt");
 
 
 		for (auto& studentas : Vec1) {

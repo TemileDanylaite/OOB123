@@ -31,7 +31,7 @@ using std::uniform_int_distribution;
 using std::fstream;
 using std::sort;
 using std::runtime_error;
-
+using std::ofstream;
 
 
 

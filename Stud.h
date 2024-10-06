@@ -16,5 +16,6 @@ void output(const Stud& Lok);
 void val(Stud& Lok);
 
 void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);
+void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCount);
 
-#endif //STUD_H
+#endif //STUD_H_INCLUDED

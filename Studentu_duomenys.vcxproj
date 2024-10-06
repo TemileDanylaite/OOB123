@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FailoGeneravimas.cpp" />
     <ClCompile Include="FailoNuskaitymas.cpp" />
     <ClCompile Include="Stud.cpp" />
     <ClCompile Include="Studentu_duomenys.cpp" />
