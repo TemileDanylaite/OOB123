@@ -32,6 +32,16 @@ void apskaiciuotiGalutinius(Stud& Lok) {
 	Lok.GalutinisMed = 0.4 * mediana + 0.6 * Lok.egz;
 }
 
+void output(const Stud& Lok, bool isFromFile = false) {
+	cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
+		<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid;
+
+	if (!isFromFile) {
+		cout << setw(15) << right << fixed << setprecision(2) << Lok.GalutinisMed;
+	}
+	cout << endl;
+}
+
 int main()
 {
 	cout << "Ar norite sugeneruoti studentu failus?(taip/ne): ";
@@ -56,11 +66,41 @@ int main()
 
 	
 	if (pasirinkimas == "nuskaityti") {
-		nuskaitytiIsFailo(Vec1,"studentai1000000.txt");
+		nuskaitytiIsFailo(Vec1,"studentai1000.txt");
 
 
 		for (auto& studentas : Vec1) {
 			apskaiciuotiGalutinius(studentas);
+		}
+
+		vector<Stud> vargsiukai, kietiakiai;
+		for (const auto& studentas : Vec1) {
+			if (studentas.GalutinisVid < 5.0) {
+				vargsiukai.push_back(studentas);
+			}
+			else {
+				kietiakiai.push_back(studentas);
+			}
+		}
+
+		sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+			return a.vardas < b.vardas;
+			});
+
+		cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
+			<< setw(5) << right << "Galutinis(Vid.)" << endl;
+
+		cout << string(60, '-') << endl;
+
+		cout << "Vargsiukai (galutinis balas < 5.0): " << endl;
+		for (const auto& studentas : vargsiukai) {
+			output(studentas, true);
+		}
+		cout << string(60, '-') << endl;
+
+		cout << "Kietiakiai (galutinis balas >= 5.0): " << endl;
+		for (const auto& studentas : kietiakiai) {
+			output(studentas, true);
 		}
 	}
 	else {
@@ -76,21 +116,22 @@ int main()
 			Vec1.push_back(Temp);
 			val(Temp);
 		}
-		
-}
 
-	sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+
+	    sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
 		return a.vardas < b.vardas;
 		});
 
-cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
-	<< setw(5) << right << "Galutinis(Vid.)"
-	<< setw(5) << right << " Galutinis(Med.)" << endl;
+		cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
+		<< setw(5) << right << "Galutinis(Vid.)"
+		<< setw(5) << right << " Galutinis(Med.)" << endl;
 
-cout << string(60, '-') << endl;
+	    cout << string(60, '-') << endl;
 
-	for (const auto& studentas : Vec1) {
-		output(studentas);
+		for (const auto& studentas : Vec1) {
+			output(studentas, false);
+		}
+
 	}
 
 	system("pause");
