@@ -32,6 +32,49 @@ void apskaiciuotiGalutinius(Stud& Lok) {
 	Lok.GalutinisMed = 0.4 * mediana + 0.6 * Lok.egz;
 }
 
+void irasytiVargsiukus(const vector<Stud>& vargsiukai, const string& failoPavadinimas) {
+	ofstream failas(failoPavadinimas);
+	if (failas.is_open()) {
+		failas << setw(15) << left << "Vardas"
+			<< setw(15) << left << "Pavarde"
+			<< setw(20) << left << "Galutinis(Vid.)" << endl;
+
+
+		for (const auto& studentas : vargsiukai) {
+			failas << setw(15) << left << studentas.vardas
+				<< setw(15) << left << studentas.pavarde
+				<< setw(20) << left << fixed << setprecision(2) << studentas.GalutinisVid << endl;
+	
+		}
+		failas.close();
+		cout << "Vargsiukai issaugoti i faila: " << failoPavadinimas << endl;
+	}
+	else {
+		cout << "Nepavyk atidaryti failo: " << failoPavadinimas << endl;
+	}
+}
+void irasytiKietiakiai(const vector<Stud>& kietiakiai, const string& failoPavadinimas) {
+	ofstream failas(failoPavadinimas);
+	if (failas.is_open()) {
+		failas << setw(15) << left << "Vardas"
+			<< setw(15) << left << "Pavarde"
+			<< setw(20) << left << "Galutinis(Vid.)" << endl;
+
+		for (const auto& studentas : kietiakiai) {
+			failas << setw(15) << left << studentas.vardas
+				<< setw(15) << left << studentas.pavarde
+				<< setw(20) << left << fixed << setprecision(2) << studentas.GalutinisVid << endl;
+		}
+		failas.close();
+		cout << "Kietiakiai issaugoti i faila: " << failoPavadinimas << endl;
+	}
+	else {
+		cout << "Nepavyk atidaryti failo: " << failoPavadinimas << endl;
+	}
+}
+
+
+
 void output(const Stud& Lok, bool isFromFile = false) {
 	cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
 		<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid;
@@ -82,6 +125,9 @@ int main()
 				kietiakiai.push_back(studentas);
 			}
 		}
+
+		irasytiVargsiukus(vargsiukai, "vargsiukai.txt");
+		irasytiKietiakiai(kietiakiai, "kietiakiai.txt");
 
 		sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
 			return a.vardas < b.vardas;
