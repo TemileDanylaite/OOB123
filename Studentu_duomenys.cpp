@@ -50,7 +50,7 @@ void irasytiVargsiukus(const vector<Stud>& vargsiukai, const string& failoPavadi
 		cout << "Vargsiukai issaugoti i faila: " << failoPavadinimas << endl;
 	}
 	else {
-		cout << "Nepavyk atidaryti failo: " << failoPavadinimas << endl;
+		cout << "Nepavyko atidaryti failo: " << failoPavadinimas << endl;
 	}
 }
 void irasytiKietiakiai(const vector<Stud>& kietiakiai, const string& failoPavadinimas) {
@@ -69,7 +69,7 @@ void irasytiKietiakiai(const vector<Stud>& kietiakiai, const string& failoPavadi
 		cout << "Kietiakiai issaugoti i faila: " << failoPavadinimas << endl;
 	}
 	else {
-		cout << "Nepavyk atidaryti failo: " << failoPavadinimas << endl;
+		cout << "Nepavyko atidaryti failo: " << failoPavadinimas << endl;
 	}
 }
 
@@ -87,45 +87,16 @@ void output(const Stud& Lok, bool isFromFile = false) {
 
 int main()
 {
-	using namespace std::chrono;
-
 	cout << "Ar norite sugeneruoti studentu failus?(taip/ne): ";
 	string generuotiFailoPasirinkima;
 	cin >> generuotiFailoPasirinkima;
 
 	if (generuotiFailoPasirinkima == "taip") {
-
-		auto pradziosLaikas = steady_clock::now();
 		sugeneruotiStudentoFaila("studentai1000.txt", 1000, 5);
-		auto pabaigosLaikas = steady_clock::now();
-		auto trukme1000 = duration_cast<duration<double>>(pabaigosLaikas - pradziosLaikas).count();
-		cout << "1000 studentu failo kurimo trukme: " << fixed << setprecision(5) << trukme1000 << " s" << endl;
-
-		auto pradziosLaikas = steady_clock::now();
-		sugeneruotiStudentoFaila("studentai10000.txt", 10000, 7); 
-		auto pabaigosLaikas = steady_clock::now();
-		auto trukme10000 = duration_cast<duration<double>>(pabaigosLaikas - pradziosLaikas).count();
-		cout << "10000 studentu failo kurimo trukme: " << fixed << setprecision(5) << trukme10000 << " s" << endl;
-
-		auto pradziosLaikas = steady_clock::now();
+		sugeneruotiStudentoFaila("studentai10000.txt", 10000, 7);
 		sugeneruotiStudentoFaila("studentai100000.txt", 100000, 6);
-		auto pabaigosLaikas = steady_clock::now();
-		auto trukme100000 = duration_cast<duration<double>>(pabaigosLaikas - pradziosLaikas).count();
-		cout << "100000 studentu failo kurimo trukme: " << fixed << setprecision(5) << trukme100000 << " s" << endl;
-
-		auto pradziosLaikas = steady_clock::now();
 		sugeneruotiStudentoFaila("studentai1000000.txt", 1000000, 8);
-		auto pabaigosLaikas = steady_clock::now();
-		auto trukme1000000 = duration_cast<duration<double>>(pabaigosLaikas - pradziosLaikas).count();
-		cout << "1000000 studentu failo kurimo trukme: " << fixed << setprecision(5) << trukme1000000 << " s" << endl;
-
-
-		auto pradziosLaikas = steady_clock::now();
 		sugeneruotiStudentoFaila("studentai10000000.txt", 10000000, 4);
-		auto pabaigosLaikas = steady_clock::now();
-		auto trukme10000000 = duration_cast<duration<double>>(pabaigosLaikas - pradziosLaikas).count();
-		cout << "10000000 studentu failo kurimo trukme: " << fixed << setprecision(5) << trukme10000000 << " s" << endl;
-
 		cout << "Failai sugeneruoti!" << endl;
 	}
 
