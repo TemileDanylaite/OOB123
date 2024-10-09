@@ -3,6 +3,8 @@
 
 
 void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCount) {
+	auto pradzia = std::chrono::high_resolution_clock::now();
+	
 	ofstream outFile(fileName);
 	if (!outFile) {
 		std::cerr << "Nepavyko sukurti failo: " << fileName << endl;
@@ -38,4 +40,8 @@ void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCo
 
 	outFile.close();
 	cout << "Failas sukurtas: " << fileName << endl;
+
+	auto pabaiga = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> elapsed = pabaiga - pradzia;
+	cout << "Failo kurimo trukme: " <<fixed << setprecision(5) << elapsed.count() << " s" << endl;
 }
