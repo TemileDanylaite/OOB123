@@ -29,7 +29,7 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, surušiuos
 - 1000000 įrašų failo - 58.57744s
 - 10000000 įrašų failo - 470.53538s
 
-**Testavimo rezultatai()**
+**Testavimo rezultatai:**
 1. Failas:1000 įrašų:
 - nuskaitymo laikas: 0.06038s
 - rušiavimas didėjimo tvarka laikas, su sort funkcija:  0.01251s  
