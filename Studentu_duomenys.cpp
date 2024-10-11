@@ -76,13 +76,13 @@ void irasytiKietiakiai(const vector<Stud>& kietiakiai, const string& failoPavadi
 
 
 void output(const Stud& Lok, bool isFromFile = false) {
-	//cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
-		//<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid;
+	cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
+		<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid;
 
-	//if (!isFromFile) {
-		//cout << setw(15) << right << fixed << setprecision(2) << Lok.GalutinisMed;
-	//}
-	//cout << endl;
+	if (!isFromFile) {
+		cout << setw(15) << right << fixed << setprecision(2) << Lok.GalutinisMed;
+	}
+	cout << endl;
 }
 
 int main()
