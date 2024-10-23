@@ -148,7 +148,7 @@ int main()
 	string pasirinkimas;
 	cin >> pasirinkimas;
 
-	
+
 	if (pasirinkimas == "nuskaityti") {
 
 		cout << "Pasirinkite konteinerio tipa? (1 - vector, 2 - list): ";
@@ -330,9 +330,18 @@ int main()
 
 	}
 	else {
-			cout << "Kiek yra studentu ?";
-			int n;
-			cin >> n;
+		cout << "Kiek yra studentu ?";
+		int n;
+		cin >> n;
+
+		cout << "Pasirinkite konteineri(vector/list): ";
+		string konteineris;
+		cin >> konteineris;
+
+		vector<Stud> Vec1;
+		list<Stud> list1;
+
+		if (konteineris == "vector") {
 
 			for (int i = 0; i < n; i++) {
 				cout << "Please input user data: " << endl;
@@ -341,8 +350,9 @@ int main()
 				apskaiciuotiGalutinius(Temp);
 				Vec1.push_back(Temp);
 				val(Temp);
-			}
 
+				cout << "Objekto saugojimo atmintyje adresas: " << &Vec1.back() << endl;
+			}
 
 			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
 				return a.vardas < b.vardas;
@@ -359,7 +369,43 @@ int main()
 			}
 
 		}
+		else if (konteineris == "list") {
+			list<Stud> list1;
 
-	system("pause");
-	return 0;
+			for (int i = 0; i < n; i++) {
+				cout << "Please input user data: " << endl;
+				ived(Temp);
+
+				apskaiciuotiGalutinius(Temp);
+				list1.push_back(Temp);
+				val(Temp);
+
+				cout << "Objekto saugojimo atmintyje adresas: " << &list1.back() << endl;
+			}
+
+			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+				return a.vardas < b.vardas;
+				});
+
+			cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
+				<< setw(5) << right << "Galutinis(Vid.)"
+				<< setw(5) << right << " Galutinis(Med.)" << endl;
+
+			cout << string(60, '-') << endl;
+
+			for (const auto& studentas : list1) {
+				output(studentas, false);
+			}
+		}
+		else {
+			cout << "Neteisingas konteinerio pasirinkimas." << endl;
+		}
+
+		system("pause");
+		return 0;
+	}
 }
+
+		
+
+	
