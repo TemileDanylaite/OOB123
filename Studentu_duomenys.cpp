@@ -110,26 +110,52 @@ int main()
 
 	
 	if (pasirinkimas == "nuskaityti") {
+
+		cout << "Pasirinkite rusiavimo kriteriju(1 - pagal varda, 2 - pagal pavarde, 3 - pagal galutini bala: ";
+		int rusiavimoKriterijus;
+		cin >> rusiavimoKriterijus;
+
 		auto pradziaNuskaitymui = std::chrono::high_resolution_clock::now();
-		nuskaitytiIsFailo(Vec1,"studentai1000.txt");
+		nuskaitytiIsFailo(Vec1,"studentai10000000.txt");
 		auto pabaigaNuskaitymui = std::chrono::high_resolution_clock::now();
 		
 		cout << "Failas uzdarytas" << endl;
 		cout << "Failo is " << Vec1.size() << " irasu nuskaitymo laikas: "
 			<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaNuskaitymui - pradziaNuskaitymui).count() << " s" << endl;
-
-		auto pradziaRusiavimui = std::chrono::high_resolution_clock::now();
-		sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
-			return a.vardas < b.vardas;
-			});
-		auto pabaigaRusiavimui = std::chrono::high_resolution_clock::now();
-		cout << Vec1.size() << " irasu rusiavimas didejimo tvarka laikas, su sort funkcija: "
-			<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaRusiavimui - pradziaRusiavimui).count() << " s" << endl;
-
-
+		
 		for (auto& studentas : Vec1) {
 			apskaiciuotiGalutinius(studentas);
 		}
+
+		auto pradziaRusiavimui = std::chrono::high_resolution_clock::now();
+
+		if (rusiavimoKriterijus == 1) {
+			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+				return a.vardas < b.vardas;
+				});
+		}
+		else if (rusiavimoKriterijus == 2) {
+			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+				return a.pavarde < b.pavarde;
+				});
+		}
+		else if (rusiavimoKriterijus == 3) {
+			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+				return a.GalutinisVid < b.GalutinisVid;
+				});
+		}
+		else {
+			cout << "Netinkamas pasirinkimas. Rusiavimas pagal varda" << endl;
+			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+				return a.vardas < b.vardas;
+				});
+		}
+
+		auto pabaigaRusiavimui = std::chrono::high_resolution_clock::now();
+		cout << Vec1.size() << "irasu rusiavimas didejimo tvarka, su sort funkcija: "
+			<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaRusiavimui - pradziaRusiavimui).count() << " s " << endl;
+
+		
 
 		vector<Stud> vargsiukai, kietiakiai;
 		auto pradziaDalijimui = std::chrono::high_resolution_clock::now();
@@ -141,6 +167,8 @@ int main()
 				kietiakiai.push_back(studentas);
 			}
 		}
+		
+
 		auto pabaigaDalijimui = std::chrono::high_resolution_clock::now();
 		cout << Vec1.size() << " irasu dalijimo i dvi grupes laikas, panaikinant pradini Vektor: "
 			<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaDalijimui- pradziaDalijimui).count() << " s" << endl;
@@ -148,13 +176,13 @@ int main()
 		auto pradziaVargsiukams = std::chrono::high_resolution_clock::now();
 		irasytiVargsiukus(vargsiukai, "vargsiukai.txt");
 		auto pabaigaVargsiukams = std::chrono::high_resolution_clock::now();
-		cout <<vargsiukai.size() << " irasu  vargsiuku irasymo i faila laikas "
+		cout <<vargsiukai.size() << " irasu  vargsiuku irasymo i faila laikas: "
 			<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaVargsiukams - pradziaVargsiukams).count() << " s" << endl;
 
 		auto pradziaKietiakiams = std::chrono::high_resolution_clock::now();
 		irasytiKietiakiai(kietiakiai, "kietiakiai.txt");
 		auto pabaigaKietiakiams = std::chrono::high_resolution_clock::now();
-		cout << kietiakiai.size() << " irasu kietiakiu irasymo i faila laikas "
+		cout << kietiakiai.size() << " irasu kietiakiu irasymo i faila laikas: "
 			<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaKietiakiams - pradziaKietiakiams).count() << " s" << endl;
 
 		
