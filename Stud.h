@@ -16,9 +16,12 @@ void output(const Stud& Lok);
 void val(Stud& Lok);
 
 void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);
+void nuskaitytiIsfailo(std::list<Stud>& Vec1, const std::string& failoVardas);
 void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCount);
 void apskaiciuotiGalutinius(Stud& Lok);
-void irasytiVargsiukus(const vector<Stud>& vargsiukai, const string& failoPavadinimas);
-void irasytiKietiakiai(const vector<Stud>& kietiakiai, const string& failoPavadinimas);
+void irasytiVargsiukusVector(const vector<Stud>& vargsiukai, const string& failoPavadinimas);
+void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPavadinimas);
+void irasytiKietiakiaiVector(const vector<Stud>& kietiakiai, const string& failoPavadinimas);
+void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPavadinimas);
 
 #endif //STUD_H_INCLUDED

@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <list>
 
 
 
@@ -30,6 +31,7 @@ using std::fstream;
 using std::sort;
 using std::runtime_error;
 using std::ofstream;
+using std::list;
 
 
 
