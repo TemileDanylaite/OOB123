@@ -321,13 +321,15 @@ int main()
 
 
 			auto pabaigaTesto = std::chrono::high_resolution_clock::now();
-			cout << endl << " irasu testo laikas: "
+			cout << endl << list1.size() << " irasu testo laikas: "
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaTesto - pradziaNuskaitymui).count() << " s" << endl;
 
 
 		}
 
-		else {
+
+	}
+	else {
 			cout << "Kiek yra studentu ?";
 			int n;
 			cin >> n;
@@ -357,7 +359,6 @@ int main()
 			}
 
 		}
-	}
 
 	system("pause");
 	return 0;
