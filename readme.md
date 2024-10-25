@@ -26,7 +26,24 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, surušiuos
 - Galiausiai įvesti egzamino balą.
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
-#Konteinerių testavimas
+**#Sistemos parametrai**
+1. Procesorius(CPU):
+- Modelis: AMD Ryzen 5 3500U
+- Dažnis: 2.10 GHz
+- Branduoliai: 4
+- Gijos: šiuo metu sistemoje yra apie 3700 gijų,taciau skaicius gali kisti. 
+- Cache atmintis: L1(384 KB), L2(2.0 MB), L3(4.0 MB)
+
+2. Operatyvioji atmintis(RAM):
+- Talpa: 8 GB
+- Dažnis: 2400 MHz
+- Naudojami lizdai: 2 iš 2
+
+3. Kietasis diskas(HDD/SSD):
+- Tipas: SSD
+- Talpa: 239 GB
+
+**#Konteinerių testavimas**
 
 Tiriama ar skiriasi ir kaip skiriasi programos sparta naudojant konteinerius std::vector ir std::list.
 
@@ -42,7 +59,7 @@ Gauti rezultatai suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
 | 1000         | 0.081              | 0.061            | 0.014          | 0.001             | 0.008           | 0.003             | 0.012              | 0.012              | 0.021              | 0.020             | 0.145       | 0.105     |
 
-Išvadėlė:dkbjbfsbfjbsdfjbdbsfbsdf
+rezultatas: Lyginant suvidurkintus rezultatus, matome, kad nuskaitymo, rūšiavimo ir dalijimo laikai yra gana panašūs, tačiau naudojant  std::list konteinerį programa veikia šiek tiek greičiau. Įrašymo į failus vargšiukai ir kietiakiai laikai visiškai sutampa, kas rodo, kad įrašymo laikas nepriklauso nuo pasirenkamo konteinerio tipo. Galiausiai pastebima, kad viso testo laikas yra mažesnins, kai naudojamas sąrašo tipo konteineris.
 
 10000 įrašų failo laikai
 ![Aprasymas](10000įrašųlentele.PNG)
@@ -53,7 +70,8 @@ Gauti rezultatai suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
 | 10000         | 0.71              | 0.65            | 0.19          | 0.03             | 0.10          | 0.03            | 0.11             | 0.11            | 0.15              | 0.15            | 1.28      | 0.97    |
 
-Išvadele:
+rezultatas:Lyginant suvidurkintus rezultatus, matome, kad nuskaitymo, rūšiavimo ir dalijimo laikai yra gana panašūs, tačiau naudojant  std::list konteinerį programa veikia šiek tiek greičiau. Įrašymo į failus vargšiukai ir kietiakiai laikai visiškai sutampa, kas rodo, kad įrašymo laikas nepriklauso nuo pasirenkamo konteinerio tipo. Galiausiai pastebima, kad viso testo laikas yra mažesnins, kai naudojamas sąrašo tipo konteineris(Gaunamas tokas pats rezultatas kaip ir su 1000 įrašų failu).
+
 
 
 100000 įrašų failo laikai
@@ -65,7 +83,7 @@ Gauti rezultatai suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
 | 100000         | 6              | 6            | 2          | 0.5             | 1          | 0.3            | 1             | 1            | 1              | 1            | 12      | 9    |
 
-Išvadele:
+Rezultatas: Gauti rezultatai rodo, kad nuskaitymo laikas yra panašus, tačiau rušiavimo ir dalijimo laikai yra mažesni naudojant std::list konteinerį.Įrašymo į failus vargšiukai ir kietiakiai laikai visiškai sutampa, kas rodo, kad įrašymo laikas nepriklauso nuo pasirenkamo konteinerio tipo. Galiausiai pastebima, kad viso testo laikas yra mažesnis, kai naudojamas sąrašo tipo konteineris.
 
 
 1000000 įrašų failo laikai
@@ -77,7 +95,7 @@ Gauti rezultatai suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
 | 1000000         | 76              | 72            | 30          | 1             | 9          | 3            | 10             | 11            | 15              | 14            | 143      | 103    |
 
-Išvadele:
+Rezultatas:Nuskaitymo laikas panašus, tačiau naudojant std::list konteinerį jis yra šiek tiek mažesnis. Labiau skiriasi rušiavimo ir dalijimo i dvi grupes laikai:su std::list jie yra žymiai trumpesni. Įrašymo į failus vargšiukai ir kietiakiai laikai visiškai sutampa, kas rodo, kad įrašymo laikas nepriklauso nuo pasirenkamo konteinerio tipo. Galiausiai bendra testo trukmė ir buvo greitesnė naudojant sąrašo konteinerį.
 
 
 10000000 įrašų failo laikai
@@ -89,9 +107,9 @@ Gauti rezultatai suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
 | 10000000         | 882              | 554            | 551          |  53            | 1275          | 207            | 137             | 154            | 171              | 162          | 3109      | 1205    |
 
-Išvadelė:
+rezultatai: Matoma, kad nuskaitymo, rūšiavimo bei dalijimo i dvi grupes vidutinis laikas su std::list konteineriu yra žymiais mažesnis nei su stdd::vector. Įrašymo laikai nesiskiria reikšmingai, kas rodo, kad įrašymo laikas nepriklauso nuo pasirenkamo konteinerio tipo. Tačiau bendras testo laikas yra daugiau nei 50% mažesnis naudojant std::list konteinerį.
 
-Išvada:
+#Tyrimo rezultatai rodo, kad naudojant sąrašo tipo konteinerį, nuskaitymo, rūšiavimo bei dalijimo į dvi grupes laikai yra žymiai greitesni nei su vektoriaus konteineriu. Įrašymo laikai nesiskiria, o bendra testo trukmė yra gerokai mažesnė su sąrašo konteineriu, kas pabręžia šio konteinerio efektyvumą. Taip pat pastebėta, kad didėjant duomenų kiekiui, skirtumas tarp laikų rezultatų dar labiau išryškėja.
 
 
 
