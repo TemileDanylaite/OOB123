@@ -53,7 +53,7 @@ Buvo atlikta po 5 bandymus su kiekvieno dydžio failu. Matavimas sekundėmis. (P
 1000 įrašų failo laikai
 ![Aprasymas](1000įrašųlentele.PNG)
 
-Gauti rezultatai suvidurkinami ir suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
+Gauti rezultatai suvidurkinami ir suapvalinami, kad būtų galima pamatyti aiškesnį skirtumą.
 
 | Failo dydis(įrašai)         | Nuskaitymas (vec) | Nuskaitymas (list) | Rūšiavimas (vec) | Rūšiavimas (list) | Dalijimas (vec) | Dalijimas (list) | Įrašymas į V (vec) | Įrašymas į V (list) | Įrašymas į K (vec) | Įrašymas į K (list) | Testo (vec) | Testo (list) |
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
@@ -64,7 +64,7 @@ Rezultatas: Lyginant suvidurkintus rezultatus, matome, kad nuskaitymo, rūšiavi
 10000 įrašų failo laikai
 ![Aprasymas](10000įrašųlentele.PNG)
 
-Gauti rezultatai suvidurkinami ir suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
+Gauti rezultatai suvidurkinami ir suapvalinami, kad būtų galima pamatyti aiškesnį skirtumą.
 
 | Failo dydis(įrašai)         | Nuskaitymas (vec) | Nuskaitymas (list) | Rūšiavimas (vec) | Rūšiavimas (list) | Dalijimas (vec) | Dalijimas (list) | Įrašymas į V (vec) | Įrašymas į V (list) | Įrašymas į K (vec) | Įrašymas į K (list) | Testo (vec) | Testo (list) |
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
@@ -77,7 +77,7 @@ Rezultatas:Lyginant suvidurkintus rezultatus, matome, kad nuskaitymo, rūšiavim
 100000 įrašų failo laikai
 ![Aprasymas](100000įrašųlentele.PNG)
 
-Gauti rezultatai suvidurkinami ir suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
+Gauti rezultatai suvidurkinami ir suapvalinami, kad būtų galima pamatyti aiškesnį skirtumą.
 
 | Failo dydis(įrašai)         | Nuskaitymas (vec) | Nuskaitymas (list) | Rūšiavimas (vec) | Rūšiavimas (list) | Dalijimas (vec) | Dalijimas (list) | Įrašymas į V (vec) | Įrašymas į V (list) | Įrašymas į K (vec) | Įrašymas į K (list) | Testo (vec) | Testo (list) |
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
@@ -89,7 +89,7 @@ Rezultatas: Nuskaitymo laikas yra panašus, tačiau rušiavimo ir dalijimo laika
 1000000 įrašų failo laikai
 ![Aprasymas](1000000irašųlentele.PNG)
 
-Gauti rezultatai suvidurkinami ir suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
+Gauti rezultatai suvidurkinami ir suapvalinami, kad būtų galima pamatyti aiškesnį skirtumą.
 
 | Failo dydis(įrašai)         | Nuskaitymas (vec) | Nuskaitymas (list) | Rūšiavimas (vec) | Rūšiavimas (list) | Dalijimas (vec) | Dalijimas (list) | Įrašymas į V (vec) | Įrašymas į V (list) | Įrašymas į K (vec) | Įrašymas į K (list) | Testo (vec) | Testo (list) |
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
@@ -101,7 +101,7 @@ Rezultatas:Nuskaitymo laikas panašus, tačiau naudojant std::list konteinerį j
 10000000 įrašų failo laikai
 ![Aprasymas](10000000įrašųlentele.PNG)
 
-Gauti rezultatai suvidurkinami ir suapvalinami, kad būtū galima pamatyti aiškesnį skirtumą.
+Gauti rezultatai suvidurkinami ir suapvalinami, kad būtų galima pamatyti aiškesnį skirtumą.
 
 | Failo dydis(įrašai)         | Nuskaitymas (vec) | Nuskaitymas (list) | Rūšiavimas (vec) | Rūšiavimas (list) | Dalijimas (vec) | Dalijimas (list) | Įrašymas į V (vec) | Įrašymas į V (list) | Įrašymas į K (vec) | Įrašymas į K (list) | Testo (vec) | Testo (list) |
 |--------------------|--------------------|---------------------|-------------------|--------------------|------------------|--------------------|--------------------|---------------------|--------------------|---------------------|--------------|--------------|
