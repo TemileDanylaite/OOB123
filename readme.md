@@ -9,27 +9,7 @@ v1.0 verisjos tikslas -  konteinerių tipams (vector ir list) išmatuoti progra
 
 #Galutinis balas skaičiuojamas tokia formule: **Galutinis = 0.4 * vidurkis + 0.6 * egzaminas** (Kai reikia galutinio balo medianos pavidalu tai tiesiog vietoj vidurkio įstatoma mediana)
 
-#Norint naudotis programa, reikia atlikti šiuos veiksmus:
-- Pasirinkti, ar norite sugeneruoti failus(taip/ne).
 
-Jei pasirinksite, kad norite sugeneruoti, tuomet failai bus sukurti ir išvedime bus rodomas failų kūrimo laikas.
-  
-- Atsakyti programai, ar norite įvesti studentų duomenis ar nuskaityti juos iš failo(ivesti/nuskaityti).
-- Pasirinkti norimo naudoti konteinerio tipą (1 - vector, 2 - list).
-- Pasirinkti rūšiavimo kritetijų (1 - pagal vardą, 2 - pagal pavardę, 3 - pagal galutinį balą).
-  
-Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama pasirinktą konteinerio tipą, surušiuos studentus pagal galutinį balą(pagal vidurkį) į dvi grupes:Vargšiukai(galutinis balas < 5) ir Kietiakiai(galutinis balas >= 5), surušiuos pagal pasirinktą kriterijų ir išves į du naujus failus. 
-  
-  **Jei pasirenkate įvesti, tuomet toliau reikes atlikti šiuos veiksmus:**
-- Įvesti studentų skaičių.
-- Pasirinkti norimą naudoti konteinerį.
-- Įvesti studento vardą ir pavardę.
-- Pasirinkti ar namų darbų ir egzamino rezultatus reikia generuoti atsitiktinai(taip/ne).
-- Atsakyti programai, ar žinai koks yra namų darbų skaičius(taip/ne).
-- Įvesti namų darbų skaičių.
-- Įvesti namų darbų visus rezultatus(10-balėje sistemoje).
-- Galiausiai įvesti egzamino balą.
-Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
 **#Sistemos parametrai**
 1. Procesorius(CPU):
@@ -119,6 +99,49 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 
 #Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė.
 
+
+##Diegimas
+Šis projektas naudoja **CMake** kaip projektų valdymo įrankį ir gali būti sukurtas naudojant bet kurią operacinę sistemą, kuri palaiko CMake (Windows).
+
+##Atsisiuntimas. 
+
+Norėdami atsisiųsti šį projektą, galite naudoti šią komandą:
+
+bash
+git clone https://github.com/TemileDanylaite/Studentu_duomenys.git
+
+##Sukūrimas naudojant cmake:
+
+1. Atidarykite Developer Command Prompt for Visual Studio
+2. Eikite į projekto katalogą: cd C:\path\to\Studentu_duomenys
+3. Sukurkite build katalogą:
+mkdir build
+cd build
+4. Paleiskite CMake, kad sugeneruotumėte Visual Studio projektą: cmake ..
+5. Paleiskite sukūrimo procesą: cmake --build .
+6. Po sėkmingo sukūrimo, galite rasti vykdomąjį failą studentai_program.exe Release kataloge
+
+#Norint naudotis programa, reikia atlikti šiuos veiksmus:
+- Pasirinkti, ar norite sugeneruoti failus(taip/ne).
+
+Jei pasirinksite, kad norite sugeneruoti, tuomet failai bus sukurti ir išvedime bus rodomas failų kūrimo laikas.
+  
+- Atsakyti programai, ar norite įvesti studentų duomenis ar nuskaityti juos iš failo(ivesti/nuskaityti).
+- Pasirinkti norimo naudoti konteinerio tipą (1 - vector, 2 - list).
+- Pasirinkti rūšiavimo kritetijų (1 - pagal vardą, 2 - pagal pavardę, 3 - pagal galutinį balą).
+  
+Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama pasirinktą konteinerio tipą, surušiuos studentus pagal galutinį balą(pagal vidurkį) į dvi grupes:Vargšiukai(galutinis balas < 5) ir Kietiakiai(galutinis balas >= 5), surušiuos pagal pasirinktą kriterijų ir išves į du naujus failus. 
+  
+  **Jei pasirenkate įvesti, tuomet toliau reikes atlikti šiuos veiksmus:**
+- Įvesti studentų skaičių.
+- Pasirinkti norimą naudoti konteinerį.
+- Įvesti studento vardą ir pavardę.
+- Pasirinkti ar namų darbų ir egzamino rezultatus reikia generuoti atsitiktinai(taip/ne).
+- Atsakyti programai, ar žinai koks yra namų darbų skaičius(taip/ne).
+- Įvesti namų darbų skaičių.
+- Įvesti namų darbų visus rezultatus(10-balėje sistemoje).
+- Galiausiai įvesti egzamino balą.
+Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
 #Naudotos bibliotekos:
 - `<iostream>`
