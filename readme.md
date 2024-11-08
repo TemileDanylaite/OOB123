@@ -1,5 +1,6 @@
-#Studentų galutinio balo apskaičiavimo programa. (v1.0 versija)
-v1.0 verisjos tikslas -  konteinerių tipams (vector ir list) išmatuoti programos veikimo spartą priklausomai nuo studentų dalijimo į dvi kategorijas strategijos.
+#Studentų galutinio balo apskaičiavimo programa. (v1.0 versija) 
+
+#v1.0 verisjos tikslas -  konteinerių tipams (vector ir list) išmatuoti programos veikimo spartą priklausomai nuo studentų dalijimo į dvi kategorijas strategijos.
 
 #Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
 
@@ -59,7 +60,7 @@ Išvados:Palyginus pagal 1 ir 2 strategias gautus vidutinius dalijimo laikus esa
 
 Todėl toliau pasirinkus greičiau veikiančią strategiją 2 , įvykdysime 3 strategiją.
 
-3 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant greičiausiai veikianti 1 arba 2 strategiją  įtraukiant į ją "efektyvius" darbo su konteineriais metodus. Šiame tyrime pritaikyti tinkami algoritmai studentų dalijimo procedūrai paspartinti (optimizuoti) ant vieno fiksuoto konteinerio - vektoriaus.
+3 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant greičiau veikiančia 2 strategiją  įtraukiant į ją "efektyvius" darbo su konteineriais metodus. Šiame tyrime pritaikyti tinkami algoritmai studentų dalijimo procedūrai paspartinti (optimizuoti) ant vieno fiksuoto konteinerio - vektoriaus.
 
 Naudoti kodo blokai tikrinti algortimų įtaka spartai:
 ![Aprasymas](metodasPartition.PNG)
@@ -77,7 +78,7 @@ Kadangi rezultatai skiriasi aiškiai, todėl buvo atliekama po viena bandymą ki
 | 1000000     | 2.47309        | 3.85637               | 3.72332       | 5.86594              |
 | 10000000    | 176.45273      | 263.87251             | 188.99018     | 204.46178            |
 
-Rezultatas: Ištyrus gautą lentelę, pastebėta, kad po kiekvieno algortimo panaudojimom,programos veikimo sparta dalijimo atžvilgiu greičiausia buvo naudojant algortimą std::partition.
+Rezultatas: Ištyrus gautą lentelę, pastebėta, kad po kiekvieno algortimo panaudojimo,programos veikimo sparta dalijimo atžvilgiu greičiausia buvo naudojant algortimą std::partition.
 
 
 #Efektyvumo tyrimai ir rezultatai: 
@@ -95,17 +96,20 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 #Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė. 
 
 
-##Diegimas
+**##Diegimas**
+
 Šis projektas naudoja **CMake** kaip projektų valdymo įrankį ir gali būti sukurtas naudojant bet kurią operacinę sistemą, kuri palaiko CMake (Windows).
 
-##Atsisiuntimas. 
+**##Atsisiuntimas**
 
 Norėdami atsisiųsti šį projektą, galite naudoti šią komandą:
 
 bash
 git clone https://github.com/TemileDanylaite/Studentu_duomenys.git
 
-##CMakeLists.txt  sukūrimas:
+
+**#CMakeLists.txt  sukūrimas:**
+
 cmake_minimum_required(Version 3.10)
 
 project(Studentu_duomenys)
@@ -124,7 +128,7 @@ set(SOURCES
 
 add_executable(studentai_program ${SOURCES})
 
-##Sukūrimas naudojant cmake:
+**##Sukūrimas naudojant cmake:**
 
 1. Atidarykite Developer Command Prompt for Visual Studio
 2. Eikite į projekto katalogą: cd C:\path\to\Studentu_duomenys
@@ -135,7 +139,7 @@ cd build
 5. Paleiskite sukūrimo procesą: cmake --build .
 6. Po sėkmingo sukūrimo, galite rasti vykdomąjį failą studentai_program.exe Release kataloge
 
-#Norint naudotis programa, reikia atlikti šiuos veiksmus:
+**#Norint naudotis programa, reikia atlikti šiuos veiksmus:**
 - Pasirinkti, ar norite sugeneruoti failus(taip/ne).
 
 Jei pasirinksite, kad norite sugeneruoti, tuomet failai bus sukurti ir išvedime bus rodomas failų kūrimo laikas.
@@ -158,10 +162,10 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama 
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
 ## Visų iki šios v1.0 versijos atliktų releasu apibendrinimas:
-- 1 ir 2 versijos(v.pradinė ir v0.1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
-- 3 versija(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
-- 4 versija(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
-- 5 versija(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
+- 1 ir 2 releasai(v.pradinė ir v0.1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
+- 3 releasas(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
+- 4 releasas(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
+- 5 releasas(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
 
 #Naudotos bibliotekos:
 - `<iostream>`
