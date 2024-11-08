@@ -110,6 +110,25 @@ Norėdami atsisiųsti šį projektą, galite naudoti šią komandą:
 bash
 git clone https://github.com/TemileDanylaite/Studentu_duomenys.git
 
+##CMakeLists.txt  sukūrimas:
+cmake_minimum_required(Version 3.10)
+
+project(Studentu_duomenys)
+
+set(CMAKE_CXX_STANDART 17)
+set(CMAKE_CXX_STANDART_REQUIRED ON)
+
+set(SOURCES
+    Studentu_duomenys.cpp
+    Stud.cpp
+    FailoGeneravimas.cpp
+    FailoNuskaitymas.cpp
+    Mylib.h
+    Stud.h
+)
+
+add_executable(studentai_program ${SOURCES})
+
 ##Sukūrimas naudojant cmake:
 
 1. Atidarykite Developer Command Prompt for Visual Studio
