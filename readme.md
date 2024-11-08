@@ -1,14 +1,9 @@
-
-#mano projektas
-sis failas apraso mano projekto informacija
-=======
 #Studentų galutinio balo apskaičiavimo programa. (v1.0 versija)
 v1.0 verisjos tikslas -  konteinerių tipams (vector ir list) išmatuoti programos veikimo spartą priklausomai nuo studentų dalijimo į dvi kategorijas strategijos.
 
 #Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
 
 #Galutinis balas skaičiuojamas tokia formule: **Galutinis = 0.4 * vidurkis + 0.6 * egzaminas** (Kai reikia galutinio balo medianos pavidalu tai tiesiog vietoj vidurkio įstatoma mediana)
-
 
 
 **#Sistemos parametrai**
@@ -43,7 +38,7 @@ Pastaba. Apskaičiuotas vidutinis laikas(sekundėmis), kuris leidžia greičiau 
 | 1000000     | 9.277       | 3.051      |
 | 10000000    | 1275.484    | 206.538    |
 
-Rezultatas:Galima pastebėti, kad kad naudojant sąrašo konteinerį, dalijimas vyksta žymiai greičiau.
+Rezultatas:Galima pastebėti, kad naudojant sąrašo konteinerį, dalijimas vyksta žymiai greičiau.
 
 2 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: "vargšiukai". 
 
@@ -97,7 +92,7 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
   
 - Vartotojo sąsajos paprastumas: programoje yra leidžiama lengvai įvesti duomenis ir gauti rezultatus. Aiškiai nurodyti visi privalomi įvedimai ir rezultatas gaunamas greitai.
 
-#Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė.
+#Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė. 
 
 
 ##Diegimas
@@ -161,6 +156,12 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama 
 - Įvesti namų darbų visus rezultatus(10-balėje sistemoje).
 - Galiausiai įvesti egzamino balą.
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
+
+## Visų iki šios v1.0 versijos atliktų releasu apibendrinimas:
+- 1 ir 2 versijos(v.pradinė ir v0.1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
+- 3 versija(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
+- 4 versija(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
+- 5 versija(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
 
 #Naudotos bibliotekos:
 - `<iostream>`
